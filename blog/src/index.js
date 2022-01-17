@@ -11,6 +11,9 @@ app.engine('handlebars',engine());
 app.set('view engine','handlebars');
 app.set('views', path.join(__dirname,'/resource/views'));
 
-
 app.get('/',(req,res)=> res.render('home'));
+
+app.get('/search',function(request,respond){
+    return respond.render('search');
+})
 app.listen(port,()=>console.log(`Example app listening at http://localhost:${port}`));
